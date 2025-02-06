@@ -5,11 +5,10 @@
 **Description**: The script uses a dictionary to store team member information. Each key in the dictionary corresponds to a specific information (Names, Emails, Hobbies, etc.), and the values are strings containing comma-separated data for each team member.
 To make the data easier to access and manipulate:
 
-       The _.split(", ")_ method is used to divide the comma-separated strings into lists.
-      The _.join(", ")_ method is used to bring list items back into strings for printing all team members'information.
+      * The _.split(", ")_ method is used to divide the comma-separated strings into lists.
+      * The _.join(", ")_ method is used to bring list items back into strings for printing all team members'information.
 
 Therfore, the script has two main functionalities:
-
       * Print information for all team members.
       * Print information for a single team member by accessing specific index in the lists.
 
