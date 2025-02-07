@@ -6,9 +6,9 @@ info = {
     "Names": "Teodora, Alvin, Bilal, Tanson, Natt",
     "Slack usernames" : "Teodora, Alvin, bilal ashraf, K.Tanson, Natt",
     "Emails" : "teodoradespotovski@gmail.com, alvinobande123@gmail.com, eclecticbilalashraf@gmail.com, Kelvins.tanson@gmail.com, im.nathn@gmail.com",
-    "Hobbies" : "Cooking, Music, Mixed Martial Arts, No info, Read manga",
-    "Countries" : "Serbia, Nigerian, Germany, No info, Australia",
-    "Disciplines" : "Biochemistry, Medical Biotechnology, Bioinformatics, No info, Biotechnology",
+    "Hobbies" : "Cooking, Music, Mixed Martial Arts, Graphic design, Read manga",
+    "Countries" : "Serbia, Nigerian, Germany, Ghana, Australia",
+    "Disciplines" : "Biochemistry, Medical Biotechnology, Bioinformatics, Medical Biochemistry and Molecular Biology, Biotechnology",
     "Preferred programming language" : "Python, Python, Python, R, Python"
 } 
 
@@ -42,3 +42,5 @@ print(f"""\nInformation for one team member:
  Discipline: {Disciplines[0]} 
  Preffered_programming_language: {Preffered_programming_language[0]}""")
  # Note: If you want to print information for all other group memembrs you can just simply change [0] to [1]-[4]
+
+# Find the code on: https://github.com/teodorades/hackbio-biocoding-internship/tree/main 
