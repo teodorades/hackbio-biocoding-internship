@@ -40,7 +40,7 @@ print(f"""\nInformation for one team member:
  Hobby: {Hobbies[0]}
  Country: {Countries[0]}
  Discipline: {Disciplines[0]} 
- Preffered_programming_language: {Preffered_programming_language[0]}""")
+ Preffered programming language: {Preffered_programming_language[0]}""")
  # Note: If you want to print information for all other group memembrs you can just simply change [0] to [1]-[4]
 
 # Find the code on: https://github.com/teodorades/hackbio-biocoding-internship/tree/main 
