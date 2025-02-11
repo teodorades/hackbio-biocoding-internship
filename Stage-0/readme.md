@@ -17,7 +17,7 @@ Therfore, the script has two main functionalities:
 * Print information for all team members.
 * Print information for a single team member by accessing specific index in the lists.
 
-We considered using slicing (for example for Names: _print(Names[0:5])_) for printing of all information, but using .join() was looked more elegant.
+Considered using slicing (for example for Names: _print(Names[0:5])_) for printing of all information, but using .join() was looked more elegant.
 
 #### Result
 The script uses dictionary, and allows you to print dictionary stored information for all team members or for a single team member.
