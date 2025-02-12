@@ -13,7 +13,7 @@ def translate(DNA):
         # convert DNA to RNA
         RNA = DNA.replace('T', 'U')
 
-        protein = []
+        protein = [] # for a large sequence it is better to use [] than ''
         for i in range(0, len(RNA), 3):
             codon = RNA[i:i+3] #def of codon
             if codon in RNA_code_table:
