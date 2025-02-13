@@ -1,4 +1,4 @@
-# Write a function for translating DNA to protein
+# First function. Write a function for translating DNA to protein
 RNA_code_table = {'UUU' : 'F', 'CUU' : 'L', 'AUU' : 'I', 'GUU' : 'V', 'UUC' : 'F', 'CUC' : 'L', 'AUC' : 'I', 'GUC' : 'V',  
 'UUA' : 'L', 'CUA' : 'L', 'AUA' : 'I', 'GUA' : 'V', 'UUG' : 'L', 'CUG' : 'L', 'AUG' : 'M', 'GUG' : 'V',  
 'UCU' : 'S', 'CCU' : 'P', 'ACU' : 'T', 'GCU' : 'A', 'UCC' : 'S', 'CCC' : 'P', 'ACC' : 'T', 'GCC' : 'A',  
@@ -9,7 +9,7 @@ RNA_code_table = {'UUU' : 'F', 'CUU' : 'L', 'AUU' : 'I', 'GUU' : 'V', 'UUC' : 'F
 'UGA' : 'Stop', 'CGA' : 'R', 'AGA' : 'R', 'GGA' : 'G', 'UGG' : 'W', 'CGG' : 'R', 'AGG' : 'R', 'GGG' : 'G'
 } # key:value, codon is key, amino-acid is value
 
-def translate(DNA):
+def translate(DNA:str):
         # convert DNA to RNA
         RNA = DNA.replace('T', 'U')
 
@@ -27,7 +27,7 @@ def translate(DNA):
 DNA = 'ATGGCCCTGTGGATGCGGGGAAGGCCAGGCACCGAGGGCCAGGGACCTGGCGGCTCTTCTACCAGCAGCAGCCTGTGGATGCGGGGAAGGCCAGGCACCGAGGGCCAGGGACCTGGCGGCTCTTCTACCAGCAGCAGCCTGTGGATGCGGGGAAGGCCAGGCACCGAGGGCCAGGGACCTGGCGGCTCTTCTACCAGCAGCAGCTGCCCTGGCAGCTGGAGGCGGGGCAGCCTGGAGCAGGACCTGCAGATCGCGGGCATCGCGGGCGGAGGAGGAGGGTGCCGCGCGGGAGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGAGGCGGCGGA'
 print(translate(DNA))
 
-# Forth function
+# Fourth function
 """ Finally, write a function for calculating the hamming distance
  between your Slack username and twitter/X handle (synthesize if you don’t have one). 
  Feel free to pad it with extra words if they are not of the same length."""
@@ -49,25 +49,51 @@ Therefore, your growth curve can be: Population Size vs Time, Cell density vs Ti
 Using your function, generate a dataframe with 100 different growth curves """
 import math
 import random
-import pandas as pd
+import matplotlib.pyplot as plt
+MAX_VALUE = 50
+MAX_TIME = 30
 
-def logistic_growth_cruve(initial_population, time, max_value, lag_phase, expo_phase):
-    for time in range(time - lag_phase, 400):
-        population_size = max_value/ (1+ ((max_value - initial_population)/initial_population) * math.exp(-expo_phase * (time - lag_phase)))
+def logistic_growth_curve(initial_population, max_value, max_time, lag_phase, expo_phase):
+    population_sizes = []
+    for time in range(max_time):
+        if time < lag_phase:
+            population_size = initial_population
+        elif lag_phase <= time < MAX_TIME*2/3:
+            population_size = max_value/ (1+ ((max_value - initial_population)/initial_population) * math.exp(-expo_phase * (time - lag_phase)))
+        
         # defined stationary and dead phase
-        if 20 <= time <= 150:
-          population_size = 20
-        elif time <=150:
-         population_size -= 50
+        elif MAX_TIME*2/3 <= time < MAX_TIME*5/6:
+            population_size = max_value
+        else:
+            population_size = -(time - MAX_TIME*5/6) + MAX_VALUE
 
-def generate_logistic_gowth_curve(num = 100):
-    rows  = [] 
+        population_sizes.append(population_size)
 
-    for i in range(num):
-        initial_population = random.randint(0,5)
-        max_value = random.randint(50, 200)
-        lag_phase = random.randint(0,10)
-        expo_phase = random.randint(0.1,1)
-         
-print(logistic_growth_cruve())
+    return population_sizes
+
+dataframe=[]
+for i in range(100):
+    # randomize lag_phase and expo_phase
+    lag_phase=random.randint(0,10)
+    expo_phase=random.uniform(0.1,1)
+    generate_growth_curve = logistic_growth_curve(initial_population=10, max_value=MAX_VALUE, max_time=MAX_TIME, lag_phase=lag_phase, expo_phase=expo_phase)
+    x = list(range(0, len(generate_growth_curve)))
+    plt.plot(x,generate_growth_curve)
+    dataframe.append(generate_growth_curve)
+
+plt.xlabel('time (days)')
+plt.ylabel('population size')
+plt.title('Logistic growth curve')
+plt.show()
+
+# Third funtion
+# 100 % is max_value, 80 %
+def calculate_time_80_percent(population_sizes:list, max_value):
+    population_size80 = max_value*80/100
+    for i in range(len(population_sizes)):
+        if population_sizes[i] >= population_size80:
+            return i
+print(calculate_time_80_percent(dataframe[0], max_value=MAX_VALUE))
+
+    
 
