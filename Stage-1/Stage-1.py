@@ -55,10 +55,10 @@ MAX_VALUE = 50
 MAX_TIME = 30
 
 def logistic_growth_curve(initial_population, max_value, max_time, lag_phase, expo_phase):
-    population_sizes = []
+    population = [] # list for storing the population_sizes from 1 - 30 days
     for time in range(max_time):
         if time < lag_phase:
-            population_size = initial_population
+            population_size = initial_population #staying in lag_phase
         elif lag_phase <= time < MAX_TIME*2/3:
             population_size = max_value/ (1+ ((max_value - initial_population)/initial_population) * math.exp(-expo_phase * (time - lag_phase)))
         
@@ -68,11 +68,11 @@ def logistic_growth_curve(initial_population, max_value, max_time, lag_phase, ex
         else:
             population_size = -(time - MAX_TIME*5/6) + MAX_VALUE
 
-        population_sizes.append(population_size)
+        population.append(population_size)
 
-    return population_sizes
+    return population
 
-dataframe=[]
+dataframe=[] # store all informations about population_size in dataframe 
 
 for i in range(100):
     # randomize lag_phase and expo_phase
@@ -91,11 +91,12 @@ plt.title('Logistic growth curve')
 plt.show()
 
 # Third funtion
+# Write a function for determining the time to reach 80% of the maximum growth; usually the carrying capacity
 # 100 % is max_value, 80 %
-def calculate_time_80_percent(population_sizes:list, max_value):
+def calculate_time_80_percent(population_size:list, max_value):
     population_size80 = max_value*80/100
-    for i in range(len(population_sizes)):
-        if population_sizes[i] >= population_size80:
+    for i in range(len(population_size)):
+        if population_size[i] >= population_size80:
             return i
 print(calculate_time_80_percent(dataframe[0], max_value=MAX_VALUE))
 
