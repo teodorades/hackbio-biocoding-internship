@@ -73,6 +73,7 @@ def logistic_growth_curve(initial_population, max_value, max_time, lag_phase, ex
     return population_sizes
 
 dataframe=[]
+
 for i in range(100):
     # randomize lag_phase and expo_phase
     lag_phase=random.randint(0,10)
