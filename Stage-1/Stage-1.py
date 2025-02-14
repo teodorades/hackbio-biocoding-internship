@@ -15,7 +15,7 @@ def translate(DNA:str):
 
         protein = [] # for a large sequence it is better to use [] than ''
         for i in range(0, len(RNA), 3):
-            codon = RNA[i:i+3] #def of codon
+            codon = RNA[i:i+3] # def of codon
             if codon in RNA_code_table:
                 amino_acid = RNA_code_table[codon]
             if amino_acid == 'Stop':
@@ -50,6 +50,7 @@ Using your function, generate a dataframe with 100 different growth curves """
 import math
 import random
 import matplotlib.pyplot as plt
+# defined constants:
 MAX_VALUE = 50
 MAX_TIME = 30
 
@@ -78,9 +79,11 @@ for i in range(100):
     expo_phase=random.uniform(0.1,1)
     generate_growth_curve = logistic_growth_curve(initial_population=10, max_value=MAX_VALUE, max_time=MAX_TIME, lag_phase=lag_phase, expo_phase=expo_phase)
     x = list(range(0, len(generate_growth_curve)))
-    plt.plot(x,generate_growth_curve)
-    dataframe.append(generate_growth_curve)
+    plt.plot(x,generate_growth_curve) # ploting of calculated data
 
+    dataframe.append(generate_growth_curve) # generate dataframe
+
+# Additional parametars for graphs
 plt.xlabel('time (days)')
 plt.ylabel('population size')
 plt.title('Logistic growth curve')
