@@ -48,4 +48,4 @@ Use matplotlib.pyplot to visualize the results.
 #### Third funtion
 Task_3: Write a function for determining the time to reach 80% of the maximum growth; usually the carrying capacity
 
-Defined the function for calulating time at 80% of maximum growth, and iterate i to find approximately same value with calculated 80%.
+Defined the function for calulating time at 80% of maximum growth, and iterate i to find approximately same value in dataframe[0] with calculated 80%.
