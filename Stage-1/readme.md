@@ -1,4 +1,5 @@
 ***** First Function *****
+
 Task: Write a function for translating DNA to protein
 
 A dictionary (RNA_codon_table) was created to store information about codons and their corresponding amino acids.
