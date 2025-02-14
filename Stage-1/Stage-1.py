@@ -11,6 +11,7 @@ RNA_code_table = {'UUU' : 'F', 'CUU' : 'L', 'AUU' : 'I', 'GUU' : 'V', 'UUC' : 'F
 
 def translate(DNA:str):
         # convert DNA to RNA
+        
         RNA = DNA.replace('T', 'U')
 
         protein = [] # for a large sequence it is better to use [] than ''
