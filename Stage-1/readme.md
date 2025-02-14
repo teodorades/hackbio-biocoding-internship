@@ -7,7 +7,7 @@ The function for translating DNA to protein was developed following these steps:
 1) To be more realistic, the DNA sequence (in the form of a string) is first translated into RNA by replacing the nucleotide 'T' with 'U' using the .replace() method.
 2) An empty list (protein = []) was created to store the protein sequence.
 3) The RNA sequence is iterated through in steps of three nucleotides (codons) until the end of the sequence, as defined by len(RNA).
-4) If a codon is present in RNA_codon_table, the corresponding amino acid is retrieved as the value associated with the codon key. If the codon is 'Stop', the function terminates. This applies if all codons can be found in the dictionary.
+4) If a codon is present in RNA_codon_table, the corresponding amino acid is retrieved as the value associated with the codon key. If the codon is 'Stop', the function terminates. _This applies if all codons can be found in the dictionary._
 5) Each identified amino acid is appended to the protein sequence list.
 6) To ensure better visualization of the output, ''.join(protein) is used for printing.
 

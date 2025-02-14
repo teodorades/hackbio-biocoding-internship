@@ -99,5 +99,6 @@ def calculate_time_80_percent(population_sizes:list, max_value):
             return i
 print(calculate_time_80_percent(dataframe[0], max_value=MAX_VALUE))
 
+# Code can be find on: https://github.com/teodorades/hackbio-biocoding-internship/tree/main/Stage-1
     
 
