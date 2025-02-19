@@ -29,7 +29,7 @@ Your function should include 2 extra parameters that randomize the length of the
 - Defined constants necessary for calculation
 
 Creating function logistic_growth_curve(initial_population, max_value, max_time, lag_phase, expo_phase):
-1) Making emty list named population_sizes, in which will append different 
+1) Making empty list named population_sizes, in which will append calculated values
 2) Defining necessary if/elif/else conditions:
 Lag phase: Population remains nearly constant.
 Exponential phase: Population follows a logistic growth function.
