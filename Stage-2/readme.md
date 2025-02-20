@@ -1,18 +1,15 @@
 #### Task 2.6 Transcriptomics ####
 
-Important libraries were `import` (pandas, seaborn, matplotlib.pyplot, math).
+Important libraries were imported (`pandas`, `seaborn`, `matplotlib.pyplot`, `math`).
 
-Data was imported from txt file, and dataframe (gene_df) we created from imported data.
+Data was imported from .txt file, and DataFrame named `gene_df` were created from imported data.
 
-*padj* values column were separated from dataframe in a list using `.tolist()` method.
-To calucalte $$ \log_{10}(padj) $$ funtion `log_padj()` was defined.
+*padj* values were extracted from the DataFrame as a list using `.tolist()` method.
+To calucalte $$ \log_{10}(padj) $$, a funtion  named `log_padj()` was defined. The computed values were than added as a new column named *-log10padj* in the DataFrame.
 
-New column *-log10padj* were created with values calucalted from defined function.
+To classify genes based on differential expression, upregulated genes were identified as those with log2fc > 1 and pval < 0.01, while downregulated genes were those with log2fc < -1 and pval < 0.01. All other genes were classified as insignificant. The classification was performed by iterating through both the *log2FoldChange* and *pvalue* using `zip()` function. The results were stored in a newly created column named "regulation of genes".
 
-For the determination of upregulated (Genes with log2fc > 1 and pval < 0.01) and downregulated genes (Genes with log2fc < -1 and pval < 0.01) the iteration was done throught both *log2FoldChange* and *pvalue* using `zip`. All other values of log2fc and pval were determined as insignificant.
 
-Again, new column was added: *regulation of genes*
+To calucalte the top 5  upregulated and downregulated genes `.nlargest()` and `.nsmallest()` method were used.
 
-To calucalte the top 5  upregulated and downregulated genes `.nlargest` and `.nsmallest` method were used.
-
-For the Volcano plot scattering the seaborn and matplotlib.pyplot were used.
+Finally, a Volcano plot scattering the `seaborn` and `matplotlib.pyplot` were used, where genes were color-coded based on their regulation status.
