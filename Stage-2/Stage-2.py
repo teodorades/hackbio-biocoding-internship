@@ -1,13 +1,14 @@
-# Task Code 2.1: Microbiology
-
-# Task Code 2.4:Biochemistry & Oncology
-
-# Task Code 2.6:Transcriptomics
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import math
 
+# Task Code 2.1: Microbiology
+
+# Task Code 2.4:Biochemistry & Oncology
+
+
+# Task Code 2.6:Transcriptomics
 gene_data = "https://gist.githubusercontent.com/stephenturner/806e31fce55a8b7175af/raw/1a507c4c3f9f1baaa3a69187223ff3d3050628d4/results.txt"
 gene_df = pd.read_csv(gene_data, sep= ' ')
 
@@ -30,7 +31,7 @@ regulation_of_genes = []
 # Determine the upregulated genes (Genes with Log2FC > 1 and pvalue < 0.01)
 # Determine the downregulated genes (Genes with Log2FC < -1 and pvalue < 0.01)
 
-for log2fc, pval in zip(gene_df['log2FoldChange'], gene_df['pvalue']): # zip allows iteration over two columns
+for log2fc, pval in zip(gene_df["log2FoldChange"], gene_df["pvalue"]): # zip allows iteration over two columns
     if log2fc > 1 and pval < 0.01:
         regulation = 'up'
     elif log2fc < -1 and pval < 0.01:
@@ -46,13 +47,13 @@ gene_df["regulation of genes"] = list(regulation_of_genes)
 top_upregulated = gene_df.loc[gene_df["regulation of genes"] == "up"].nlargest(5, "log2FoldChange")
 top_downregulated = gene_df.loc[gene_df["regulation of genes"] == "down"].nsmallest(5, "log2FoldChange")
 
-print(f'Top 5 Upregulated genes": \n{top_upregulated[['Gene', 'log2FoldChange', 'pvalue']]}')
-print(f'Top 5 Downregulated genes": \n{top_downregulated[['Gene', 'log2FoldChange', 'pvalue']]}')
+print(f'Top 5 Upregulated genes: \n{top_upregulated[["Gene", "log2FoldChange", "pvalue"]]}')
+print(f'Top 5 Downregulated genes: \n{top_downregulated[["Gene", "log2FoldChange", "pvalue"]]}')
 
 # Volcano plot
 sns.scatterplot(data=gene_df, x="log2FoldChange", y="-log10padj", hue = "regulation of genes")
 plt.xlabel("log2 Fold Change")
-plt.ylabel("-log10padj")
+plt.ylabel("-log10(padj)")
 plt.title("Volcano Plot")
 plt.show() 
 
