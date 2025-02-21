@@ -35,7 +35,7 @@ mutants = []
 for i in delet_sift["specific_Protein_aa"]:  
     if i in delet_fold["specific_Protein_aa"].values:  
         mutants.append(i) 
-# print(mutants)
+print(mutants)
 # print(len(mutants)) # --> check
 
 """ Study the amino_acid_substitution_nomenclature

@@ -3,7 +3,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import math
 
-# Task Code 2.1: Microbiology
+# Task Code 2.3: Botany and Plant Science
 
 # Task Code 2.4:Biochemistry & Oncology
 sift_data = 'https://raw.githubusercontent.com/HackBio-Internship/public_datasets/main/R/datasets/sift.tsv'
@@ -37,7 +37,7 @@ mutants = []
 for i in delet_sift["specific_Protein_aa"]:  
     if i in delet_fold["specific_Protein_aa"].values:  
         mutants.append(i) 
-# print(mutants)
+print(mutants)
 # print(len(mutants)) # --> check
 
 """ Study the amino_acid_substitution_nomenclature
@@ -63,6 +63,7 @@ plt.show()
 
 """The amino acid with the highest impact on protein structure and function is: A (alanine).
     Alanine has non-polar, small side chain, hydrofobic structure, and no charge."""
+
 
 
 # Task Code 2.6:Transcriptomics
