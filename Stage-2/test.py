@@ -56,5 +56,8 @@ plt.ylabel("Frequency")
 plt.show()
 
 # Generate a pie-chart:
-plt.pie(freq_aa.values, labels=freq_aa.index)
+plt.pie(freq_aa.values, labels=freq_aa.index, textprops={'fontsize': 6})
 plt.show()
+
+"""The amino acid with the highest impact on protein structure and function is: A (alanine).
+    Alanine has non-polar, small side chain, hydrofobic structure, and no charge."""
