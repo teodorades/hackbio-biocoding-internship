@@ -1,6 +1,8 @@
+# Task Code 2.4:Biochemistry & Oncology
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import math
 
 sift_data = 'https://raw.githubusercontent.com/HackBio-Internship/public_datasets/main/R/datasets/sift.tsv'
 fold_data = 'https://raw.githubusercontent.com/HackBio-Internship/public_datasets/main/R/datasets/foldX.tsv'
@@ -19,10 +21,8 @@ merged_df = pd.merge(fold_df, sift_df, on="specific_Protein_aa")
 
 # Drop duplicate columns
 merged_df = merged_df.drop(columns=["Protein_y", "Amino_Acid_y"])
-
 # Rename remaining columns for clarity
 merged_df = merged_df.rename(columns={"Protein_x": "Protein", "Amino_Acid_x": "Amino_Acid"})
-
 # print(merged_df) # --> check
 
 # A SIFT Score below 0.05 is deleterious
