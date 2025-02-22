@@ -1,6 +1,5 @@
 # Task Code 2.4:Biochemistry & Oncology
 import pandas as pd
-import seaborn as sns
 import matplotlib.pyplot as plt
 import math
 
