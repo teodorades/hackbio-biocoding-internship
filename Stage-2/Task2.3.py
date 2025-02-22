@@ -39,8 +39,11 @@ WT_MT_df["Residual_cutoff"] = residual_cutoff
 print(f"This are metabolites outisde the residual cut-off:\n{WT_MT_df[WT_MT_df["Residual_cutoff"] == 'outside'].index}")
 print(f"This are metabolites inside the residual cut-off:\n{WT_MT_df[WT_MT_df["Residual_cutoff"] == 'inside'].index}")
 
+# Needs two graphs:
+fig, ax = plt.subplots()
+
 # Plotting the data
-sns.scatterplot(data=WT_MT_df, x="ΔM_Value_MT", y="ΔM_Value_WT", hue="Residual_cutoff", palette = {'inside' : 'grey', 'outside' : 'salmon'})
+sns.scatterplot(data=WT_MT_df, x="ΔM_Value_MT", y="ΔM_Value_WT", hue="Residual_cutoff", palette = {'inside' : 'grey', 'outside' : 'salmon'}, ax=ax)
 
 # Add reference line:
 values_y = []
@@ -51,27 +54,46 @@ def line_function():
         values_x.append(i)
         values_y.append(y)
 line_function()
-plt.plot(values_x, values_y)
+ax.plot(values_x, values_y)
 
 # Set plot title and labels
-plt.title('Wild-type and Mutant Metabolic Responses')
-plt.xlabel('ΔM Value MT')
-plt.ylabel('ΔM Value WT')
-# plt.show()
+ax.set_title('Wild-type and Mutant Metabolic Responses')
+ax.set_xlabel('ΔM Value MT')
+ax.set_ylabel('ΔM Value WT')
+plt.show()
 
 # 'Grey' metabolites (inside) - with low residual, and less deviation from the line show simmilar response between WT and MT plants, where
 # 'Salmon' metabolites (outside) - with high residual, more deviation from the line show different responses between conditions.
 # Comment: Deffinitely there is significant difference in metabolic response between wild-type (WT), and the mutant (MT) plants.
 
-outside_metabolites = WT_MT_df[WT_MT_df["Residual_cutoff"] == 'outside'].head(6)
-print(outside_metabolites)
-for index in outside_metabolites.index:
-    y = df[index][1:4]
-    x = [0,8, 24]
-    fig3 = plt.plot(x, y)
+# 'Grey' metabolites (inside) - with low residual, and less deviation from the line show similar response between WT and MT plants,
+# 'Salmon' metabolites (outside) - with high residual, more deviation from the line show different responses between conditions.
 
-plt.show(fig3)
-   
+outside_metabolites = WT_MT_df[WT_MT_df["Residual_cutoff"] == 'outside'].head(6)
+
+# Time points for the x-axis
+x = [0, 8, 24]
+
+# Create the figure and axes
+fig, ax = plt.subplots()
+
+# Loop over metabolites that are outside the residual cut-off
+for index in outside_metabolites.index:
+    # Get the values for the metabolite from rows 1 to 3:
+    y1 = df.loc[1:3, index].values
+    
+    # Plot the metabolite data on the same axes
+    ax.plot(x, y1, marker='o', linestyle='-', label=f"WT {index}")
+
+# Set plot title and labels
+ax.set_title('Metabolic Response Over Time for Selected Metabolites')
+ax.set_xlabel('Time (hours)')
+ax.set_ylabel('Metabolic Response')
+ax.legend()
+
+plt.show()
+
+
 
 
 
