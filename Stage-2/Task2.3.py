@@ -1,5 +1,4 @@
 # Task Code 2.3: Botany and Plant Science 
-
 import pandas as pd 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -11,7 +10,7 @@ df = pd.read_csv(data, sep='\t')
 
 # Select only numeric columns for subtraction
 numeric_columns = df.select_dtypes(include=['int64', 'float64']).columns
-# print(numeric_columns)
+# print(numeric_columns) # --> check
 
 # Initialize an empty DataFrame for storing results
 WT_MT_df = pd.DataFrame()
@@ -66,11 +65,7 @@ plt.show()
 # 'Salmon' metabolites (outside) - with high residual, more deviation from the line show different responses between conditions.
 # Comment: Deffinitely there is significant difference in metabolic response between wild-type (WT), and the mutant (MT) plants.
 
-# 'Grey' metabolites (inside) - with low residual, and less deviation from the line show similar response between WT and MT plants,
-# 'Salmon' metabolites (outside) - with high residual, more deviation from the line show different responses between conditions.
-
 outside_metabolites = WT_MT_df[WT_MT_df["Residual_cutoff"] == 'outside'].head(6)
-
 # Time points for the x-axis
 x = [0, 8, 24]
 
@@ -81,7 +76,6 @@ fig, ax = plt.subplots()
 for index in outside_metabolites.index:
     # Get the values for the metabolite from rows 1 to 3:
     y1 = df.loc[1:3, index].values
-    
     # Plot the metabolite data on the same axes
     ax.plot(x, y1, marker='o', linestyle='-', label=f"WT {index}")
 

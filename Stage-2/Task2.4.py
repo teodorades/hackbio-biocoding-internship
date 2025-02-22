@@ -1,7 +1,6 @@
 # Task Code 2.4:Biochemistry & Oncology
 import pandas as pd
 import matplotlib.pyplot as plt
-import math
 
 sift_data = 'https://raw.githubusercontent.com/HackBio-Internship/public_datasets/main/R/datasets/sift.tsv'
 fold_data = 'https://raw.githubusercontent.com/HackBio-Internship/public_datasets/main/R/datasets/foldX.tsv'
