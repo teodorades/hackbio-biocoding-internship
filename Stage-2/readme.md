@@ -13,6 +13,10 @@ To calucalte the top 5  upregulated and downregulated genes `.nlargest()` and `.
 
 Finally, a Volcano plot scattering the `seaborn` and `matplotlib.pyplot` were used, where genes were color-coded based on their regulation status.
 
+**Figure 2.6.1**
+![image](https://github.com/user-attachments/assets/34ddd353-da9b-4795-96f9-924f66439219)
+
+
 #### Task 2.4 Biochemistry & Oncology ####
 
 Important libraries were imported (`pandas`, `matplotlib.pyplot`).
