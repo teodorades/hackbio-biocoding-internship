@@ -71,7 +71,7 @@ for index in list(set(indices)):
     average_scores.append(average_score)
     print(f"Cluster {index} has average score:{average_score}.")
  
-print(f"Claster with minimal docking score is:{average_scores.index(min(average_scores))}")
+print(f"Claster with lowerst average docking score is:{average_scores.index(min(average_scores))}")
  
 # Print chemical properties of chemicals with lowest average docking score:
 final_df = pd.DataFrame(chemical_properties_per_cluster[average_scores.index(min(average_scores))])
