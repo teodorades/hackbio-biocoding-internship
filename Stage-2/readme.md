@@ -41,12 +41,16 @@ Data was imported form txt file, and Dataframe was created using `pandas`. It wa
 
 As task required the ΔM: substraction of row with DMSO and row with 24h treatment were calculated for both the wild-type (WT), and the mutant-type(MT). The columns were named: *"ΔM_Value_WT"*, *"ΔM_Value_MT"*, stored in newly created Dataframe *WT_MT_df* and used for `sns.scatterplot`.
 Note: It was ensured that that only numeric columns used for substraction. With method `.loc[row, numeric_column]` the row of Dataframe were set.
-![image](https://github.com/user-attachments/assets/5729f062-1ddb-4332-a8d7-a8c5c08959fd)
 
 Reference line: y=x was made using function `def line_function():` in range (-3,3).
 This line was required by the task, and necessary to calculate the distance of each point (metabolite) on the graph. New column in Dataframe WT_MT_df `"Distance"` was used for storing calculated distance information.
+**Figure 2.3.1**
+![image](https://github.com/user-attachments/assets/5729f062-1ddb-4332-a8d7-a8c5c08959fd)
 
 With this information in the `"Distance"` column, residual_cutoff  were  used to make difference between 'outside' and 'inside' values, or so to say values that are 'in' residual cut-off or 'out'.
 The information was stored in new column in Dataframe WT_MT_df.
 
 Using `outside_metabolites = WT_MT_df[WT_MT_df["Residual_cutoff"] == 'outside'].head(6)`, first six metabolites that are outside range set by residual cut-off, were used for plotting their metabolic response over time (0, 8, and 24h) --> only for wild-type values.
+**Figure 2.3.2**
+![image](https://github.com/user-attachments/assets/85b656c2-eaae-4428-879b-550aedf84b1d)
+
