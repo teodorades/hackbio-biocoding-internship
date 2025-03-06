@@ -9,7 +9,6 @@ To calucalte -log(10)padj, a funtion  named `log_padj()` was defined. The comput
 
 To classify genes based on differential expression, upregulated genes were identified as those with log2fc > 1 and pval < 0.01, while downregulated genes were those with log2fc < -1 and pval < 0.01. All other genes were classified as insignificant. The classification was performed by iterating through both the *log2FoldChange* and *pvalue* using `zip()` function. The results were stored in a newly created column named "regulation of genes".
 
-
 To calucalte the top 5  upregulated and downregulated genes `.nlargest()` and `.nsmallest()` method were used.
 
 Finally, a Volcano plot scattering the `seaborn` and `matplotlib.pyplot` were used, where genes were color-coded based on their regulation status.
@@ -31,7 +30,14 @@ Mutants list was determing using this conditions.
 To extract the original (wild-type) amino_acid, new column was created: `merged_df["Wild_Type_AA"]` which stores first string (`.str[0]`) character of column `merged_df["Amino_Acid"]`.
 To calculate the frequency of amino acid, list `freq_aa` was created, and method `.value_counts()` was used.
 
+**Figure 2.4.1**
+![image](https://github.com/user-attachments/assets/7fce54cd-ad29-4bbc-ad5a-748468fcabaa)
+
 As asked in the task, using `matplotlib.pyplot as plt` the barplot and pie-chart were created.
+
+**Figure 2.4.2**
+![image](https://github.com/user-attachments/assets/ffee6cd7-4357-4f69-a700-526c1e390952)
+
 
 #### Task Code 2.3: Botany and Plant Science ####
 
@@ -44,6 +50,7 @@ Note: It was ensured that that only numeric columns used for substraction. With 
 
 Reference line: y=x was made using function `def line_function():` in range (-3,3).
 This line was required by the task, and necessary to calculate the distance of each point (metabolite) on the graph. New column in Dataframe WT_MT_df `"Distance"` was used for storing calculated distance information.
+
 **Figure 2.3.1**
 ![image](https://github.com/user-attachments/assets/5729f062-1ddb-4332-a8d7-a8c5c08959fd)
 
@@ -51,6 +58,7 @@ With this information in the `"Distance"` column, residual_cutoff  were  used to
 The information was stored in new column in Dataframe WT_MT_df.
 
 Using `outside_metabolites = WT_MT_df[WT_MT_df["Residual_cutoff"] == 'outside'].head(6)`, first six metabolites that are outside range set by residual cut-off, were used for plotting their metabolic response over time (0, 8, and 24h) --> only for wild-type values.
+
 **Figure 2.3.2**
 ![image](https://github.com/user-attachments/assets/85b656c2-eaae-4428-879b-550aedf84b1d)
 
