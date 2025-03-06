@@ -15,14 +15,14 @@ Principal component 1 (PC1) and Principal component 2 (PC2):
 **Printed output:**
 
 List for indices:
-```markdown
+
 < [1 0 2 ... 1 1 1]
 
 **Figure**
 ![image](https://github.com/user-attachments/assets/876bb046-73a2-4d65-8d59-1a839b967b0d)
 
 **Printed output:**
-```text
+
 Clusters average scores:
 Cluster 0 has average score:-89.2632789380448.
 Cluster 1 has average score:-62.771634127631216.
@@ -31,5 +31,5 @@ Cluster 3 has average score:-57.42684203823773.
 Cluster 4 has average score:-63.8510015343152.
 
 **Printed output:**
-```text
+
 Cluster with lowest average docking score is: 0
