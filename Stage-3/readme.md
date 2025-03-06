@@ -1,14 +1,16 @@
 Import necessary libraries (`pandas, sklearn.decomposition import PCA, from sklearn.preprocessing import StandardScaler, matplotlib.pyplot, from sklearn.cluster import KMeans, numpy, from sklearn.metrics import silhouette_samples, silhouette_score, matplotlib.patches as mpatches, and matplotlib.colors import Normalize`)
 
 **Printed output:** used for PCA graph:
+
 Principal component 1 (PC1) and Principal component 2 (PC2):
-[[  2.68793621  -0.72620336]
- [  0.08183217   4.54497332]
- [  5.5248472    3.85005726]
- ...
- [ -0.84416509 -11.29018516]
- [ -4.99976647 -19.7985095 ]
- [ -4.58655639 -30.48500731]]
+```markdown
+< [[  2.68793621  -0.72620336]
+< [  0.08183217   4.54497332]
+< [  5.5248472    3.85005726]
+< ...
+< [ -0.84416509 -11.29018516]
+< [ -4.99976647 -19.7985095 ]
+< [ -4.58655639 -30.48500731]]
 
 **Printed output:**
 List for indices:
