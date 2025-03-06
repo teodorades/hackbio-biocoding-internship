@@ -12,6 +12,9 @@ Principal component 1 (PC1) and Principal component 2 (PC2):
 List for indices:
 [1 0 2 ... 1 1 1]
 
+Figure
+![image](https://github.com/user-attachments/assets/876bb046-73a2-4d65-8d59-1a839b967b0d)
+
 Clusters average scores:
 Cluster 0 has average score:-89.2632789380448.
 Cluster 1 has average score:-62.771634127631216.
