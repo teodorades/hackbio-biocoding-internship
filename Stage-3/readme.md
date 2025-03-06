@@ -3,7 +3,7 @@ Import necessary libraries (`pandas, sklearn.decomposition import PCA, from skle
 **Printed output:** used for PCA graph:
 
 Principal component 1 (PC1) and Principal component 2 (PC2):
-
+```text
 < [[  2.68793621  -0.72620336]
 < [  0.08183217   4.54497332]
 < [  5.5248472    3.85005726]
@@ -11,6 +11,7 @@ Principal component 1 (PC1) and Principal component 2 (PC2):
 < [ -0.84416509 -11.29018516]
 < [ -4.99976647 -19.7985095 ]
 < [ -4.58655639 -30.48500731]]
+```text
 
 **Printed output:**
 
