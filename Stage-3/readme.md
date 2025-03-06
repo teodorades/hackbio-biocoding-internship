@@ -13,19 +13,23 @@ Principal component 1 (PC1) and Principal component 2 (PC2):
 < [ -4.58655639 -30.48500731]]
 
 **Printed output:**
+
 List for indices:
-[1 0 2 ... 1 1 1]
+```markdown
+< [1 0 2 ... 1 1 1]
 
 **Figure**
 ![image](https://github.com/user-attachments/assets/876bb046-73a2-4d65-8d59-1a839b967b0d)
 
 **Printed output:**
-Clusters average scores:
-Cluster 0 has average score:-89.2632789380448.
-Cluster 1 has average score:-62.771634127631216.
-Cluster 2 has average score:-82.23764533779618.
-Cluster 3 has average score:-57.42684203823773.
-Cluster 4 has average score:-63.8510015343152.
+```markdown
+< Clusters average scores:
+< Cluster 0 has average score:-89.2632789380448.
+< Cluster 1 has average score:-62.771634127631216.
+< Cluster 2 has average score:-82.23764533779618.
+< Cluster 3 has average score:-57.42684203823773.
+< Cluster 4 has average score:-63.8510015343152.
 
 **Printed output:**
-Cluster with lowest average docking score is: 0
+```markdown
+< Cluster with lowest average docking score is: 0
