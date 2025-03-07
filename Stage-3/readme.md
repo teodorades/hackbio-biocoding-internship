@@ -29,7 +29,7 @@ List for indices:
 6) Plotting the Figure with two subplots, `plt.subplot(1,2,1)` is plot that shows PCA graph colored by the docking score (column: `score`), and `plt.sublot(1,2,2) is PCA graph colored by clusters.
 
 **Figure**
-![image](https://github.com/user-attachments/assets/876bb046-73a2-4d65-8d59-1a839b967b0d)
+![image](https://github.com/user-attachments/assets/ea65666c-0105-4b1e-b77c-f3f934f94619)
 
 7) Creating the loop for calculating the average scores (`average_score`) of docking scores per clusters. First loop goes through unique set of `index` in indices list. Second loop goes through the all rows in original dataframe (df).                           Append all chemical properties information into the dictionary `chemical_properties_per_cluster = {}` where **key** is cluster number (`index` in loop), and **values** are chemical properties.
 
