@@ -94,3 +94,12 @@ print(f"Claster with lowerst average docking score is:{average_scores.index(min(
 # Print chemical properties of chemicals with lowest average docking score:
 final_df = pd.DataFrame(chemical_properties_per_cluster[average_scores.index(min(average_scores))])
 print(final_df)
+
+# Cheking the chemical differences, chosen features: MW, XLogP, HBA and HBD:
+df['Cluster'] = cluster_label
+grouped_df = df.groupby('Cluster')[['MW', 'XLogP', 'TPSA_NO', 'AromaticRingCount']].agg(['mean', 'std', 'min', 'max'])
+print(grouped_df)
+print(f"Compering Mw: mean Mw(Cluster 1)> mean Mw(Cluster 0), Cluster 1 has heavier molecules.\n",
+      f"Compering XLogP: mean XLogP(Cluster 1)> mean XLogP(Cluster 0), Cluster 1 is more lipophilic (less water-soluble).\n",
+      f"Compering TPSA_NO: mean TPSA_NO(Cluster 1)> mean TPSA_NO(Cluster 0), Cluster 1 has higher polarity.\n",
+      f"Compering AromaticRingCount: mean ARC(Claster1)> mean ARC(Cluster 0), Cluster 1 has more aromatic rings.\n")

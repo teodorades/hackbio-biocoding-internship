@@ -43,3 +43,4 @@ Clusters average scores:
 ```text
 Cluster with lowest average docking score is: 1
 ```
+8) Compering selected features (Mw, XLogP, TPSA_No, and AromaticRingCount) to make final conclusions.
