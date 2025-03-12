@@ -40,10 +40,10 @@ for n_clusters in range_n_clusters:
         previous_silh = silhouette
         best_clusters = n_clusters
 
-print(f"Best n_clusters is: {best_clusters}")
+print(f"Best n_clusters is: {best_clusters}") # this does not give me a lot of information and diversity for chemical structural space
 
-# Initialize and fit KMeans with best n_clusters
-kmeans = KMeans(n_clusters=best_clusters, random_state=42)
+# Initialize and fit KMeans with k = 10, to have more diversity
+kmeans = KMeans(n_clusters=10, random_state=42)
 cluster_label = kmeans.fit_predict(principal_components)
 print(cluster_label)
 
@@ -99,7 +99,3 @@ print(final_df)
 df['Cluster'] = cluster_label
 grouped_df = df.groupby('Cluster')[['MW', 'XLogP', 'TPSA_NO', 'AromaticRingCount']].agg(['mean', 'std', 'min', 'max'])
 print(grouped_df)
-print(f"Compering Mw: mean Mw(Cluster 1)> mean Mw(Cluster 0), Cluster 1 has heavier molecules.\n",
-      f"Compering XLogP: mean XLogP(Cluster 1)> mean XLogP(Cluster 0), Cluster 1 is more lipophilic (less water-soluble).\n",
-      f"Compering TPSA_NO: mean TPSA_NO(Cluster 1)> mean TPSA_NO(Cluster 0), Cluster 1 has higher polarity.\n",
-      f"Compering AromaticRingCount: mean ARC(Claster1)> mean ARC(Cluster 0), Cluster 1 has more aromatic rings.\n")
