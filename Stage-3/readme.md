@@ -19,29 +19,36 @@ Principal component 1 (PC1) and Principal component 2 (PC2):
  * To ensure that PCA is shows the enought varience between the selected features: `p.sum(pca.explained_variance_ratio_)` was used! It shows that (0.5787931695723) 58 % of total  variance of original features is captured by each principal component.
 
 5) Initializing the KMeans with chosen clusters. The best n_clusters number (`best_clusters`) is  chosen with `silhouette_score`.      So, the range of n_clusters were chosen [2,3,4,5] and the loop was created to go trought the range and compere the calculated silhouette with previously calculated silhouette.
- * but maybe for our case this is not the best solution --> because we have a lot of structures, and it will better to use bigger k value, to see wider diversity
+ * but maybe for our case this is not the best solution --> because we have a lot of structures, and it will better to use bigger k value, to see wider diversity (so maybe it is better to use: k = 10, to keep more diversity)
 * The list `cluster_label` is created to store the information of clusters labels for each chemical compound in the original dataframe.
 **Printed output:**
 
 List for indices:
 ```text
-< [1 0 1 ... 1 0 1]
+< [5 4 6 ... 6 0 6]
 ```
 6) Plotting the Figure with two subplots, `plt.subplot(1,2,1)` is plot that shows PCA graph colored by the docking score (column: `score`), and `plt.sublot(1,2,2) is PCA graph colored by clusters.
 
 **Figure**
-![image](https://github.com/user-attachments/assets/ea65666c-0105-4b1e-b77c-f3f934f94619)
+![image](https://github.com/user-attachments/assets/6a275665-0e79-4a29-9675-379126bbfff7)
 
 7) Creating the loop for calculating the average scores (`average_score`) of docking scores per clusters. First loop goes through unique set of `index` in indices list. Second loop goes through the all rows in original dataframe (df).                           Append all chemical properties information into the dictionary `chemical_properties_per_cluster = {}` where **key** is cluster number (`index` in loop), and **values** are chemical properties.
 
 **Printed output:**
 ```text
 Clusters average scores:
-< Cluster 0 has average score:-68.15697424293974.
-< Cluster 1 has average score:-73.84337848531261.
+< Cluster 0 has average score:-71.8980599349168.
+< Cluster 1 has average score:-75.68495709607483.
+< Cluster 2 has average score:-51.48121977485452.
+< Cluster 3 has average score:-73.46297982524287.
+< Cluster 4 has average score:-89.64680134168476.
+< Cluster 5 has average score:-64.29654823445725.
+< Cluster 6 has average score:-85.60557683021399.
+< Cluster 7 has average score:-54.11054496333539.
+< Cluster 8 has average score:-81.94539001890753.
+< Cluster 9 has average score:-54.7762270728873.
 ```
 **Printed output:**
 ```text
-Cluster with lowest average docking score is: 1
+Cluster with lowest average docking score is: 4
 ```
-8) Compering selected features (Mw, XLogP, TPSA_No, and AromaticRingCount) to make final conclusions.
