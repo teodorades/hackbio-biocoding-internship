@@ -19,7 +19,7 @@ Principal component 1 (PC1) and Principal component 2 (PC2):
  * To ensure that PCA is shows the enought varience between the selected features: `p.sum(pca.explained_variance_ratio_)` was used! It shows that (0.5787931695723) 58 % of total  variance of original features is captured by each principal component.
 
 5) Initializing the KMeans with chosen clusters. The best n_clusters number (`best_clusters`) is  chosen with `silhouette_score`.      So, the range of n_clusters were chosen [2,3,4,5] and the loop was created to go trought the range and compere the calculated silhouette with previously calculated silhouette.
-   # but maybe for our case this is not the best solution --> because we have a lot of structures, and it will better to use bigger k value, to see wider diversity
+ * but maybe for our case this is not the best solution --> because we have a lot of structures, and it will better to use bigger k value, to see wider diversity
 * The list `cluster_label` is created to store the information of clusters labels for each chemical compound in the original dataframe.
 **Printed output:**
 
