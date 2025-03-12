@@ -52,3 +52,4 @@ Clusters average scores:
 ```text
 Cluster with lowest average docking score is: 4
 ```
+Finally, I printed some chemical informations (calculated: min, max, mean, and std) for each cluster, chosen features MW, XLogP, HBA and HBD. This is done in order to see some structural chemical difference between clusters.
